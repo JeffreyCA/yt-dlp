@@ -1487,7 +1487,7 @@ if sys.platform == 'win32':
     import ctypes
     import ctypes.wintypes
     import msvcrt
-
+    '''
     class OVERLAPPED(ctypes.Structure):
         _fields_ = [
             ('Internal', ctypes.wintypes.LPVOID),
@@ -1538,7 +1538,7 @@ if sys.platform == 'win32':
         handle = msvcrt.get_osfhandle(f.fileno())
         if not UnlockFileEx(handle, 0, whole_low, whole_high, f._lock_file_overlapped_p):
             raise OSError(f'Unlocking file failed: {ctypes.FormatError()!r}')
-
+    '''
 else:
     try:
         import fcntl
